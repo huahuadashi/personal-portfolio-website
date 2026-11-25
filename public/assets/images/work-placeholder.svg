@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#0B1020"/>
+  <rect x="90" y="90" width="1020" height="720" rx="44" fill="#11182B" stroke="rgba(255,255,255,.16)"/>
+  <rect x="150" y="160" width="360" height="64" rx="18" fill="white" fill-opacity=".14"/>
+  <rect x="150" y="260" width="900" height="86" rx="24" fill="#5B7CFF" fill-opacity=".24"/>
+  <rect x="150" y="390" width="260" height="260" rx="30" fill="white" fill-opacity=".08" stroke="white" stroke-opacity=".12"/>
+  <rect x="470" y="390" width="260" height="260" rx="30" fill="white" fill-opacity=".08" stroke="white" stroke-opacity=".12"/>
+  <rect x="790" y="390" width="260" height="260" rx="30" fill="white" fill-opacity=".08" stroke="white" stroke-opacity=".12"/>
+  <path d="M205 515H355M525 515H675M845 515H995" stroke="#B8C7FF" stroke-width="14" stroke-linecap="round"/>
+  <rect x="150" y="700" width="530" height="32" rx="16" fill="white" fill-opacity=".12"/>
+  <text x="150" y="130" fill="#AFC3FF" font-family="Arial" font-size="28" letter-spacing="6">WORK ASSET PLACEHOLDER</text>
+</svg>
