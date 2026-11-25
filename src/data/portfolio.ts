@@ -38,7 +38,6 @@ export type Project = {
 const BASE = import.meta.env.BASE_URL
 const img = (name: string) => `${BASE}assets/images/ppt-extracted/${name}`
 
-
 export const profile = {
   name: { zh: '陆华洁', en: 'Lu Huajie' },
   role: { zh: 'Product Manager / Project Manager', en: 'Product Manager / Project Manager' },
@@ -249,8 +248,7 @@ export const works: Asset[] = [
   { id: 'jiangcun-hepan', title: { zh: '八字合盘界面', en: 'Compatibility chart UI' }, type: 'image', category: 'Prototype', projectId: 'jiangcun-numerology', src: img('slide39_image01_c9dc7975ed.png'), note: { zh: '来自 PPT 第 39 页。', en: 'Extracted from slide 39.' } },
   { id: 'jiangcun-similar', title: { zh: '相似四柱 / 辅助功能', en: 'Similar Four Pillars / Tools' }, type: 'image', category: 'Prototype', projectId: 'jiangcun-numerology', src: img('slide40_image01_c9e096eeba.png'), note: { zh: '来自 PPT 第 40 页。', en: 'Extracted from slide 40.' } },
   { id: 'jiangcun-archive', title: { zh: '用户档案界面', en: 'User archive UI' }, type: 'image', category: 'Prototype', projectId: 'jiangcun-numerology', src: img('slide41_image01_6bc0affcd6.png'), note: { zh: '来自 PPT 第 41 页。', en: 'Extracted from slide 41.' } },
-  { id: 'resume-placeholder', title: { zh: 'PDF 简历占位文件', en: 'Resume PDF Placeholder' }, type: 'pdf', category: 'Other', src: `${BASE}assets/docs/resume-placeholder.pdf`,
-download: `${BASE}assets/docs/resume-placeholder.pdf`, note: { zh: '当前为可替换 PDF 占位。替换同名文件即可启用真实简历下载。', en: 'This is a replaceable PDF placeholder. Replace it with the real resume PDF.' } }
+  { id: 'resume-placeholder', title: { zh: 'PDF 简历占位文件', en: 'Resume PDF Placeholder' }, type: 'pdf', category: 'Other', src: `${BASE}assets/docs/resume-placeholder.pdf`, download: `${BASE}assets/docs/resume-placeholder.pdf`, note: { zh: '当前为可替换 PDF 占位。替换同名文件即可启用真实简历下载。', en: 'This is a replaceable PDF placeholder. Replace it with the real resume PDF.' } }
 ]
 
 export const thinking = [
@@ -261,10 +259,9 @@ export const thinking = [
 ]
 
 export const navItems = [
-  { href: '/', anchor: 'home', label: { zh: '首页', en: 'Home' } },
   { href: '/', anchor: 'about', label: { zh: '关于我', en: 'About' } },
   { href: '/', anchor: 'projects', label: { zh: '项目经历', en: 'Projects' } },
-  { href: '/', anchor: 'works', label: { zh: '产品作品集', en: 'Works' } },
-  { href: '/', anchor: 'thinking', label: { zh: '产品思考', en: 'Thinking' } },
-  { href: '/', anchor: 'contact', label: { zh: '联系我', en: 'Contact' } }
+  { href: '/', anchor: 'experience', label: { zh: '工作经历', en: 'Experience' } },
+  { href: '/', anchor: 'methodology', label: { zh: '方法论', en: 'Methodology' } },
+  { href: '/', anchor: 'contact', label: { zh: '联系', en: 'Contact' } }
 ]

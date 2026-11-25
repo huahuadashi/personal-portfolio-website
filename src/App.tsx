@@ -7,23 +7,25 @@ import { ProjectDetailPage } from './pages/ProjectDetailPage'
 
 function ScrollHash() {
   const location = useLocation()
+
   useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace('#', '')
-      window.setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 100)
-    } else {
+    // HashRouter 会将路由写入 URL 的 # 后；页内导航由组件直接滚动处理。
+    if (location.pathname === '/') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
-  }, [location.pathname, location.hash])
+  }, [location.pathname])
+
   return null
 }
 
 function AppRoutes() {
   const [lang, setLang] = useState<Lang>(() => (localStorage.getItem('portfolio-lang') as Lang) || 'zh')
+
   useEffect(() => {
     localStorage.setItem('portfolio-lang', lang)
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en'
   }, [lang])
+
   return (
     <Shell lang={lang} setLang={setLang}>
       <ScrollHash />
@@ -38,8 +40,7 @@ function AppRoutes() {
 export default function App() {
   return (
     <HashRouter>
-  <AppRoutes />
-</HashRouter>
-
+      <AppRoutes />
+    </HashRouter>
   )
 }
