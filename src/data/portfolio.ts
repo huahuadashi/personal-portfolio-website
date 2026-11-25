@@ -35,7 +35,9 @@ export type Project = {
   }>
 }
 
-const img = (name: string) => `/assets/images/ppt-extracted/${name}`
+const BASE = import.meta.env.BASE_URL
+const img = (name: string) => `${BASE}assets/images/ppt-extracted/${name}`
+
 
 export const profile = {
   name: { zh: '陆华洁', en: 'Lu Huajie' },
@@ -51,7 +53,7 @@ export const profile = {
   email: '531201675@qq.com',
   phoneWechat: '18121102822',
   wechat: '18121102822',
-  resumePdf: '/assets/docs/resume-placeholder.pdf',
+  resumePdf: `${BASE}assets/docs/resume-placeholder.pdf`,
   education: { zh: '本科｜软件工程', en: 'Bachelor｜Software Engineering' },
   experience: { zh: '7 年产品工作经验｜B 端产品规划', en: '7 years product experience｜B2B product planning' },
   domains: [
@@ -247,7 +249,8 @@ export const works: Asset[] = [
   { id: 'jiangcun-hepan', title: { zh: '八字合盘界面', en: 'Compatibility chart UI' }, type: 'image', category: 'Prototype', projectId: 'jiangcun-numerology', src: img('slide39_image01_c9dc7975ed.png'), note: { zh: '来自 PPT 第 39 页。', en: 'Extracted from slide 39.' } },
   { id: 'jiangcun-similar', title: { zh: '相似四柱 / 辅助功能', en: 'Similar Four Pillars / Tools' }, type: 'image', category: 'Prototype', projectId: 'jiangcun-numerology', src: img('slide40_image01_c9e096eeba.png'), note: { zh: '来自 PPT 第 40 页。', en: 'Extracted from slide 40.' } },
   { id: 'jiangcun-archive', title: { zh: '用户档案界面', en: 'User archive UI' }, type: 'image', category: 'Prototype', projectId: 'jiangcun-numerology', src: img('slide41_image01_6bc0affcd6.png'), note: { zh: '来自 PPT 第 41 页。', en: 'Extracted from slide 41.' } },
-  { id: 'resume-placeholder', title: { zh: 'PDF 简历占位文件', en: 'Resume PDF Placeholder' }, type: 'pdf', category: 'Other', src: '/assets/docs/resume-placeholder.pdf', download: '/assets/docs/resume-placeholder.pdf', note: { zh: '当前为可替换 PDF 占位。替换同名文件即可启用真实简历下载。', en: 'This is a replaceable PDF placeholder. Replace it with the real resume PDF.' } }
+  { id: 'resume-placeholder', title: { zh: 'PDF 简历占位文件', en: 'Resume PDF Placeholder' }, type: 'pdf', category: 'Other', src: `${BASE}assets/docs/resume-placeholder.pdf`,
+download: `${BASE}assets/docs/resume-placeholder.pdf`, note: { zh: '当前为可替换 PDF 占位。替换同名文件即可启用真实简历下载。', en: 'This is a replaceable PDF placeholder. Replace it with the real resume PDF.' } }
 ]
 
 export const thinking = [

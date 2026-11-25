@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { HashRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { Shell } from './components/Layout'
 import type { Lang } from './data/portfolio'
 import { HomePage } from './pages/HomePage'
@@ -37,8 +37,9 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
+    <HashRouter>
+  <AppRoutes />
+</HashRouter>
+
   )
 }
