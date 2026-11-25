@@ -20,7 +20,7 @@ export function HomePage({ lang }: { lang: Lang }) {
 
   return (
     <>
-      <section id="home" className="relative min-h-screen overflow-hidden px-5 pt-32 lg:px-8">
+      <section id="about" className="relative min-h-screen overflow-hidden px-5 pt-32 lg:px-8">
         <div className="mx-auto grid max-w-7xl items-center gap-12 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:py-24">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/6 px-4 py-2 text-sm text-slate-300">
@@ -70,25 +70,13 @@ export function HomePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section id="about" className="section-pad px-5 lg:px-8">
+      <section id="profile" className="section-pad px-5 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionTitle lang={lang} eyebrow={{ zh: 'About', en: 'About' }} title={{ zh: '关于我', en: 'About Me' }} desc={{ zh: '基于 PPT 提取的个人定位：本科软件工程背景，7 年产品工作经验，覆盖 B 端产品规划、AI 算法产品化与项目交付。', en: 'Based on the PPT: software engineering background, 7 years of product experience across B2B product planning, AI productization and project delivery.' }} />
           <div className="mb-8 grid gap-4 md:grid-cols-3">
             <div className="glass rounded-3xl p-6"><div className="text-sm text-slate-400">Education</div><div className="mt-2 text-xl font-semibold">{t(profile.education, lang)}</div></div>
             <div className="glass rounded-3xl p-6"><div className="text-sm text-slate-400">Experience</div><div className="mt-2 text-xl font-semibold">{t(profile.experience, lang)}</div></div>
             <div className="glass rounded-3xl p-6"><div className="text-sm text-slate-400">Domains</div><div className="mt-2 text-sm leading-6 text-slate-200">{profile.domains.map((d) => t(d, lang)).join(' / ')}</div></div>
-          </div>
-          <div className="mb-10 grid gap-5 lg:grid-cols-4">
-            {experiences.map((exp) => (
-              <Reveal key={exp.period}>
-                <div className="glass h-full rounded-3xl p-6">
-                  <div className="text-sm font-semibold text-blue-200">{exp.period}</div>
-                  <h3 className="mt-3 text-lg font-semibold">{t(exp.company, lang)}</h3>
-                  <div className="mt-2 text-sm text-slate-300">{t(exp.title, lang)}</div>
-                  <p className="mt-4 text-sm leading-7 text-slate-400">{t(exp.desc, lang)}</p>
-                </div>
-              </Reveal>
-            ))}
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {skills.map((s, idx) => (
@@ -136,6 +124,24 @@ export function HomePage({ lang }: { lang: Lang }) {
         </div>
       </section>
 
+      <section id="experience" className="section-pad px-5 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionTitle lang={lang} eyebrow={{ zh: 'Experience', en: 'Experience' }} title={{ zh: '工作经历', en: 'Work Experience' }} desc={{ zh: '从工具型产品到行业平台，再到 AIoT 自动化项目，持续积累 B 端产品规划与项目交付经验。', en: 'From professional tools to industry platforms and AIoT automation projects, building continuous experience in B2B product planning and delivery.' }} />
+          <div className="grid gap-5 lg:grid-cols-4">
+            {experiences.map((exp) => (
+              <Reveal key={exp.period}>
+                <div className="glass h-full rounded-3xl p-6">
+                  <div className="text-sm font-semibold text-blue-200">{exp.period}</div>
+                  <h3 className="mt-3 text-lg font-semibold">{t(exp.company, lang)}</h3>
+                  <div className="mt-2 text-sm text-slate-300">{t(exp.title, lang)}</div>
+                  <p className="mt-4 text-sm leading-7 text-slate-400">{t(exp.desc, lang)}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="works" className="section-pad px-5 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionTitle lang={lang} eyebrow={{ zh: 'Works', en: 'Works' }} title={{ zh: '产品作品集', en: 'Product Works' }} desc={{ zh: '支持图片放大、PDF 在线预览与下载。真实素材可放入 public/assets/images 或 docs 后在 data/portfolio.ts 中维护。', en: 'Supports image lightbox, PDF preview and download. Add real assets to public/assets/images or docs and maintain them in data/portfolio.ts.' }} />
@@ -167,9 +173,9 @@ export function HomePage({ lang }: { lang: Lang }) {
         <Lightbox assets={imageWorks} index={lightbox} setIndex={setLightbox} lang={lang} />
       </section>
 
-      <section id="thinking" className="section-pad px-5 lg:px-8">
+      <section id="methodology" className="section-pad px-5 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <SectionTitle lang={lang} eyebrow={{ zh: 'Thinking', en: 'Thinking' }} title={{ zh: '产品思考与方法', en: 'Product Thinking' }} desc={{ zh: '当前方法论仅基于作品集目标进行结构化占位；待读取 PPT 后会提炼你在真实项目中体现的方法。', en: 'The current methodology is a structured placeholder. It will be refined based on real project evidence from PPT files.' }} />
+          <SectionTitle lang={lang} eyebrow={{ zh: 'Methodology', en: 'Methodology' }} title={{ zh: '产品方法论', en: 'Product Methodology' }} desc={{ zh: '基于实际项目提炼的工作方法：从业务调研、AI 场景判断、版本规划到反馈驱动迭代。', en: 'Methods derived from real projects, covering business research, AI opportunity evaluation, roadmap planning and feedback-driven iteration.' }} />
           <div className="grid gap-5 md:grid-cols-3">
             {thinking.map((item, idx) => (
               <Reveal key={item.title.zh} delay={idx * 0.05}>

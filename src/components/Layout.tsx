@@ -33,7 +33,7 @@ export function Navbar({ lang, setLang }: { lang: Lang; setLang: (lang: Lang) =>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <Link to="/" className="focus-ring flex items-center gap-3 rounded-xl" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <span className="grid h-9 w-9 place-items-center rounded-2xl bg-gradient-to-br from-blue-500 to-purple-500 font-bold">P</span>
-          <span className="hidden text-sm font-semibold tracking-wide text-slate-100 sm:block">Portfolio</span>
+          <span className="hidden text-sm font-semibold tracking-wide text-slate-100 sm:block">陆华洁</span>
         </Link>
         <div className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
